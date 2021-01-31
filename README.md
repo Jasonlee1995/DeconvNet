@@ -2,9 +2,28 @@
 
 
 ## 0. Develop Environment
+```
+Docker Image
+- tensorflow/tensorflow:tensorflow:2.4.0-gpu-jupyter
+
+Library
+- Pytorch : Stable (1.7.1) - Linux - Python - CUDA (11.0)
+```
+- Using Single GPU (not tested on cpu only)
 
 
 ## 1. Explain about Implementation
+- model.py : DeconvNet
+- train.py : train model
+- utils.py : calculate mIoU
+- Used train settings of paper as below
+  * input : (3, 224, 224)
+  * batch size : 8
+  * learning rate : 0.01
+  * momentum : 0.9
+  * weight decay : 0.0005
+  * no learning rate scheduler for convenience
+- mIoU score may be quite different with paper cause of lack of 2-stage training
 
 
 ## 2. Brief Summary of *'Learning Deconvolution Network for Semantic Segmentation'*
